@@ -165,13 +165,15 @@ fill: var(--text-accent);
 
 .nav-contacts , .nav-contacts-tel{
 color: var(--main-text);
+transition-property: color;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 250ms;
+
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
-  letter-spacing: 0.02em
-  transition-property: color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  letter-spacing: 0.02em;
 }
 
 .nav-contacts, .nav-contacts-tel:hover ,
@@ -275,7 +277,7 @@ color: var(--text-white);
 
 .join-list{
   width: 206px;
-  height: 80px;
+  height: 44px;
   margin-top: 20px;
   margin-bottom: 100px;
   display: flex;
@@ -317,6 +319,57 @@ background-color: var(--text-accent);
   background-color: var(--text-accent)
 }
 
+
+
+.e-mail{
+width: 570px;
+height: 86px;
+margin-left: 93px;
+margin-top: 12px;
+}
+.e-mail-box{
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  gap: 12px;
+}
+.e-mail-box input{
+padding: 15px 16px;
+width: 358px;
+background-color: transparent;
+border: 1px solid rgba(255, 255, 255, 0.3);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+border-radius: 4px;
+
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.button-subscribe{
+width: 200px;
+background:var(--text-accent);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+border-radius: 4px;
+cursor: pointer;
+
+font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--text-white);
+  border: 0;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+}
 
 
 
@@ -366,6 +419,7 @@ line-height: 1.88;
 letter-spacing: 0.06em;
 margin-top: 30px;
 border: 0;
+cursor: pointer;
 }
 
 /* -----modal----------------------------------------------------------- */
@@ -422,6 +476,7 @@ height: 30px;
 background-color: #FFFFFF;
 border-radius: 50%;
 border: 1px solid rgba(0, 0, 0, 0.1);
+cursor: pointer;
 
 transition-property: fill;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -441,7 +496,145 @@ fill: var(--text-accent);
 .button-close:focus .icon-close {
   fill:var(--text-accent);}
 
+
+
+
+
+
+.form {
+width: 528px;
+height: 581px;
+margin-left: auto;
+margin-right: auto;
+padding: 40px;}
+
+
+.header-form {
+  margin-bottom: 12px;
+  text-align: center;
+  font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
   
+    color: var(--text-header);
+}
+
+.form-field {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}  
+.form-field-input:focus ,
+.form-field-input:hover{
+border: 1px solid var(--text-accent);
+}
+
+.form-field-input{
+  width: 448px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+    padding: 12px 16px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;}
+
+    .icon-form {
+      fill: var(--text-header);
+      margin-right: 12px;
+    }
+.form-field-input:focus .icon-form ,
+.form-field-input:hover .icon-form{
+  fill:  var(--text-accent);
+}
+
+.form-field input {
+  width: 100%;
+  border-color: transparent;
+  }
+
+.form-field textarea {
+resize: none;
+width: 448px;
+height: 120px;
+padding: 12px 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.form-field textarea:focus,
+.form-field textarea:hover {
+  border: 1px solid var(--text-accent);}
+
+.form-field label {
+margin-bottom: 4px;
+font-weight: 400;
+font-size: 12px;
+line-height: 1.16;
+letter-spacing: 0.01em;
+color:var(--main-text);}
+
+
+.form-checkbox {
+margin-top: 20px;
+margin-bottom: 30px;
+font-weight: 400;
+font-size: 14px;
+line-height: 1.7;
+letter-spacing: 0.03em;
+color: var(--main-text);
+display: flex;
+text-align: center;
+align-items: center;
+gap: 8px;}
+
+
+
+.condition{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+  color: var(--text-accent);
+}
+.button-send{
+  width: 200px;
+  height: 50px;
+  background: var(--text-accent);
+  border-color: transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 52px;
+  
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    cursor: pointer;
+    
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: var(--text-white);
+}
+/* .button-send:focus,
+.button-send:hover {
+} */
+
+
 /*------------------------------------------- benifits */
 .benifits-list{
 display: flex;
@@ -678,13 +871,16 @@ align-items: center;
 justify-content: center;
 border: 1px solid #AFB1B8;
 border-radius: 4px;
-transition-property: border-color, ;
+transition-property: border-color ;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 transition-duration: 250ms;
 }
 
 .icon-list-clients{
   fill: #AFB1B8;
+  transition-property: fill ;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .client-link-icon:hover ,
@@ -730,6 +926,7 @@ font-size: 16px;
 line-height: 1.62;
 padding: 6px 22px;
 border: 0;
+filtr-button;
 transition-property: background-color ,color, box-shadow;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 transition-duration: 250ms;}
