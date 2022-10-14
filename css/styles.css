@@ -426,14 +426,19 @@ cursor: pointer;
 }
 
 /* -----modal----------------------------------------------------------- */
+
 .backdrop {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.2);
-z-index: 10;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.2);
+     
+    position: fixed;
+      top: 0;
+      left: 0;
+      justify-content: center;
+      align-items: center;
 
 opacity: 1;
 transition:opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -448,41 +453,34 @@ transform: translate(-50%,-50%) scale(0.5);
 }
 
 .modal {
-position: absolute;
-top: 50%;
-left: 50%;
-
-transform: translate(-50%, -50%) scale(1);
-transition:transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-width: 528px;
-height: 581px;
-display: flex;
-justify-content: flex-end;
-
-
-background: #FFFFFF;
-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-border-radius: 4px;
+  width: 528px;
+  height: 581px;
+  background-color: var(--text-white);
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+  border-radius: 4px;
+  padding: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 400ms ease-in-out 200ms;
 
 }
 .button-close{
-position: absolute;
-top: 8px;
-right: 8px;
-display: flex;
-align-items: center;
-justify-content: center;
-width: 30px;
-height: 30px;
-background-color: #FFFFFF;
-border-radius: 50%;
-border: 1px solid rgba(0, 0, 0, 0.1);
-cursor: pointer;
-
-transition-property: fill;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-transition-duration: 250ms;
+    width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background-color: var(--text-white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      cursor: pointer;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      padding: 0;
 }
 
 .icon-close {
@@ -507,11 +505,8 @@ fill: var(--text-accent);
 
 
 .form {
-width: 528px;
-height: 581px;
-margin-left: auto;
-margin-right: auto;
-padding: 40px;}
+width: 100%;
+margin-bottom: 30px;}
 
 
 .header-form {
@@ -523,169 +518,149 @@ padding: 40px;}
     line-height: 23px;
     text-align: center;
     letter-spacing: 0.03em;
-  
     color: var(--text-header);
 }
 
 .form-field {
+margin-bottom: 4px;
+display: flex;
+text-align: left;
+flex-direction: column;
   margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  
-}  
-
-.form-field-input{
-  width: 448px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-    padding: 12px 16px;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: 0.01em;
-    color: rgba(117, 117, 117, 0.5);
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-    
-    transition-property: border;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 250ms;
-  }
-.form-field-input:focus ,
-.form-field-input:hover ,
-.form-field input:checked{
-border: 1px solid var(--text-accent);
-}
-
-.icon-form {
-fill: var(--text-header);
-margin-right: 12px;
-
-  transition-property: fill;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
-}
-.form-field-input:focus .icon-form ,
-.form-field-input:hover .icon-form ,
-.form-field input:checked .icon-form{
-  fill:  var(--text-accent);
-}
-
-.form-field input {
-  width: 100%;
-  border-color: transparent;
-  }
-
-
-.form-field textarea {
-resize: none;
-width: 448px;
-height: 120px;
-padding: 12px 16px;
   font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--main-text);} 
+   
+  
+
+
+.form-name{
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
+  color: var(--main-text);
+  margin-bottom: 4px;
+}
+
+.form-field-input{
+position: relative;
+  }
+
+.form-field-input input {
+      height: 40px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        width: 100%;
+        padding-left: 45px;
+        font-size: 12px;
+        line-height: 1.16;
+        letter-spacing: 0.01em;
+        transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        outline: transparent;
+}
+
+.form-field-input input:focus,
+.form-field-input input:checked,
+.form-field-input input:hover {
+  border: 1px solid var(--text-accent);
+}
+.icon-form {
+position: absolute;
+left: 12px;
+top: 11px;
+z-index: 10;
+fill: black;
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field-input:focus .icon-form,
+.form-field-input:checked .icon-form,
+.form-field-input:hover .icon-form {
+fill:var(--text-accent);}
+
+
+
+
+.form-field textarea {
+padding: 12px 16px;
+  height: 120px;
+  width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-
-    transition-property: border;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 250ms;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: transparent;
+  resize: none;
 }
 .form-field textarea:focus,
+.form-field textarea:checked,
 .form-field textarea:hover {
   border: 1px solid var(--text-accent);}
 
-.form-field label {
-margin-bottom: 4px;
-font-weight: 400;
-font-size: 12px;
-line-height: 1.16;
-letter-spacing: 0.01em;
-color:var(--main-text);}
+
+
+.modal-agreement{
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
 .form-checkbox {
-margin-left: 13px;
-margin-top: 20px;
-margin-bottom: 30px;
+    position: absolute;
+      white-space: nowrap;
+      overflow: hidden;
+      border: 0;
+      padding: 0;
+      clip: rect(0 0 0 0);
+}
+
+.icon-check{
+margin-right: 7px;
+border-radius: 3px;
+  border: 2px solid var(--text-header);
+  background-color: transparent;
+  fill: transparent;
+  width: 16px;
+  height: 15px;
+}
+
+.modal-agreement-text:checked  + .icon-check {
+  fill: var(--text-white);
+  background-color: var(--text-accent);}
+
+
+
+.modal-agreement-text{
 font-weight: 400;
 font-size: 14px;
-line-height: 1.7;
+line-height: 24px;
 letter-spacing: 0.03em;
-width: 423px;
-height: 24px;
-display: flex;
-text-align: center;
-align-items: center;
-gap: 8px;}
-
-.form-checkbox input{
-position: absolute;
-width: 1px;
-height: 1px;
-margin: -1px;
-border: 0;
-padding: 0;
-white-space: nowrap;
-clip-path: inset(100%);
-clip: rect(0 0 0 0);
-overflow: hidden;
-width: 16px;
-height: 15px;
-margin-left: 1px;
-
+color:var(--main-text);
 }
-.icon-check{
-border: 2px solid var(--text-header);
-border-radius: 3px;
-fill: transparent;  
-}
-
-
-.form-checkbox input:checked +.icon-check{
-border: 2px solid transparent;
-border-radius: 3px;
-fill: var(--text-white);
-background-color: var(--text-accent);
-}
-
-
 .condition{
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  text-decoration-line: underline;
-  color: var(--text-accent);
+color: var(--text-accent);
+  text-decoration: none;
+  border-bottom: 1px var(--text-accent) solid;
 }
 .button-send{
-  width: 200px;
-  height: 50px;
-  background: var(--text-accent);
-  border-color: transparent;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  padding: 10px 52px;
-  
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
-    cursor: pointer;
-    
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.06em;
-    color: var(--text-white);
-}
-/* .button-send:focus,
-.button-send:hover {
-} */
-
+    background-color: var(--text-accent);
+      color: var(--text-white);
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+      border-radius: 4px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.8;
+      letter-spacing: 0.06em;
+      padding: 10px 52px;
+      text-align: center;
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
 /*------------------------------------------- benifits */
 .benifits-list{
