@@ -164,6 +164,8 @@ fill: var(--text-accent);
 /* --------------------------------------Nav-contact */
 
 .nav-contacts , .nav-contacts-tel{
+  display: flex;
+  align-items: center;
 color: var(--main-text);
 transition-property: color;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1005,16 +1007,8 @@ margin-bottom: 4px;
 }
 .content-list{
 background: var(--text-white);
-
-transition-property: box-shadow;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-transition-duration: 250ms;
 }
 
-.content-list:focus ,
-.content-list:hover {
-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
 .content-description {
   position: relative;
   width: 370px;
@@ -1038,6 +1032,19 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1p
   top: 0;
   left: 0;
 }
+.content-link{
+  display: block;
+
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+.content-link:focus,
+.content-link:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 
 .content-link:hover .description-text{
 transform: translateY(0);
